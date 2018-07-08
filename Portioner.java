@@ -11,6 +11,7 @@ package portioningapp;
  */
 public class Portioner {
     
+    // just adding a comment line to pull it down 
     private double currentFillet;
     private int targetPortions;
     private double target;
