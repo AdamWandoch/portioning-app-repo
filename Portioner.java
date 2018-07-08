@@ -134,7 +134,7 @@ public class Portioner {
                 priorityCut = (target * 2) - (target * 1.16);
                 priorityCut2 = (target * 2) - (target + offcut);
             } else {
-                //grade(target * 1.16); turning off first to find grading bug
+                //grade(target * 1.16); turning off first to find grading bug..
                 grade(target * 1.16);
                 for (int i = 0; i < targetPortions - 2; i++){
                     grade(target);
