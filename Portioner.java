@@ -10,9 +10,7 @@ package portioningapp;
  * @author Willy
  */
 public class Portioner {
-    
-    // just adding a comment line to pull it down 
-    // and adding another comment in netbeans at willy-pc
+   
     private double currentFillet;
     private int targetPortions;
     private double target;
