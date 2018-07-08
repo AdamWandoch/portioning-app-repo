@@ -10,7 +10,7 @@ package portioningapp;
  * @author AdamWandoch
  */
 public class Portioner {
-   //and another change
+   
     private double currentFillet;
     private int targetPortions;
     private double target;
