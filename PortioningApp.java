@@ -7,7 +7,7 @@ package portioningapp;
 
 /**
  *
- * @author Willy
+ * @author AdamWandoch
  */
 public class PortioningApp {
 
