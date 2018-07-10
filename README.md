@@ -43,6 +43,9 @@ There is hundreds of plants like this that would benefit from the upgrade. This 
 of a fact that a finished product consists of two pieces different in size. They are designed to cut programmed pattern regardless of 
 fillet size. 
 
+The solution would find use in any other food industry where in the pack of two there is a tolerance for two pieces to be slightly 
+different size.
+
 Cheers big ears!
 
 AdamWandoch
