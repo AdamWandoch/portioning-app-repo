@@ -9,18 +9,16 @@ package portioningapp;
  *
  * @author AdamWandoch
  */
-public class PortioningApp
-{
+public class PortioningApp {
 
     /**
      * @param args the command line arguments
      */
     
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         System.out.println("    // ------------ PORTIONER ALGORYTHM SIMULATING REGULAR PORTIONING WITH SELF-BALANCE ------------------------------- //\n" +
 "    // ----------------------------------- WITH ADDED LAST-CUT-GROWTH ------------------------------------------------- //\n" +
-"    // ********************************* AND FULL DOUBLE OFFCUT OPTIMIZATION ****************************************** //");
+"    // ********************************* AND SINGLE OFFCUT OPTIMIZATION *********************************************** //");
         double portionSize = 125;
         int testSize = 10000;
         double randomFillet;
@@ -30,8 +28,7 @@ public class PortioningApp
         System.out.println("Test One: ");
         Portioner machine1 = new Portioner(portionSize);
         
-        for (int i = 0; i < testSize; i++)
-        {
+        for (int i = 0; i < testSize; i++){
             randomFillet = Math.random() * (maxFilletSize - minFilletSize) + minFilletSize;
             machine1.process(randomFillet);
         }
@@ -42,8 +39,7 @@ public class PortioningApp
         System.out.println("Test Two: ");
         Portioner machine2 = new Portioner(portionSize);
         
-        for (int i = 0; i < testSize; i++)
-        {
+        for (int i = 0; i < testSize; i++){
             randomFillet = Math.random() * (maxFilletSize - minFilletSize) + minFilletSize;
             machine2.process(randomFillet);
         }
@@ -54,8 +50,7 @@ public class PortioningApp
         System.out.println("Test Three: ");
         Portioner machine3 = new Portioner(portionSize);
         
-        for (int i = 0; i < testSize; i++)
-        {
+        for (int i = 0; i < testSize; i++){
             randomFillet = Math.random() * (maxFilletSize - minFilletSize) + minFilletSize;
             machine3.process(randomFillet);
         }
