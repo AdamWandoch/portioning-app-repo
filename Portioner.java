@@ -76,8 +76,8 @@ public class Portioner
         System.out.println("Total amount processed: " + (int)totalFilletsWeight);
         System.out.println("Total volume from grader: " + (int)totalVolumeFromGrader);
         System.out.println("Total graded count: " + gradedCount);
-        System.out.println("Average graded portion size: " + gradedAmount / gradedCount);
-        System.out.println("Product yield: " + gradedAmount / totalFilletsWeight);
+        System.out.println("Average graded portion size: " + (gradedAmount / gradedCount));
+        System.out.println("Product yield: " + (gradedAmount / totalFilletsWeight));
         System.out.println("Target cuts percentage: " + ((double)targetGradeCount) / ((double)gradedCount));
         System.out.println("target count: " + targetGradeCount);
         System.out.println("narrowSmalls: " + narrowGradeSmallCount);
@@ -96,6 +96,7 @@ public class Portioner
     // ----------------------------------- WITH ADDED LAST-CUT-GROWTH ------------------------------------------------- //
     // ********************************* AND FULL DOUBLE OFFCUT OPTIMIZATION ****************************************** //
     // ********************** !!!! NEEDS REWORK TO CHECK FILLET SIZE ALWAYS  !!!!!! *********************************** //
+    // ******************* !!!! GRADER is still called too many times during process  !!!!!! ************************** //
     public void process(double fillet)
     {
         
