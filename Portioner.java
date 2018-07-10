@@ -96,7 +96,7 @@ public class Portioner
     // ----------------------------------- WITH ADDED LAST-CUT-GROWTH ------------------------------------------------- //
     // ********************************* AND FULL DOUBLE OFFCUT OPTIMIZATION ****************************************** //
     // ********************** !!!! NEEDS REWORK TO CHECK FILLET SIZE ALWAYS  !!!!!! *********************************** //
-    // ******************* !!!! GRADER is still called too many times during process  !!!!!! ************************** //
+    // ******************* !!!! GRADER is still called too many times during process  !!!!! *************************** //
     public void process(double fillet)
     {
         
