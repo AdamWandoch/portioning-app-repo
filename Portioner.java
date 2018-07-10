@@ -9,8 +9,9 @@ package portioningapp;
  *
  * @author AdamWandoch
  */
-public class Portioner {
-   
+public class Portioner 
+{
+ 
     private double currentFillet;
     private int targetPortions;
     private double target;
@@ -43,7 +44,8 @@ public class Portioner {
     private int wideGradeBigCount;
     
     
-    public Portioner(double targetSize){
+    public Portioner(double targetSize)
+    {
         target = targetSize;
         targetGradeMin = target * 0.96;
         targetGradeMax = target * 1.04;
@@ -57,7 +59,8 @@ public class Portioner {
         wideGradeBigMax = target * 1.16;
     }
     
-    public static double round(double value, int places) {
+    public static double round(double value, int places) 
+    {
         if (places < 0) throw new IllegalArgumentException();
 
         long factor = (long) Math.pow(10, places);
@@ -66,7 +69,8 @@ public class Portioner {
         return (double) tmp / factor;
     }
     
-    public void PrintStats(){
+    public void PrintStats()
+    {
         int gradedCount = narrowGradeSmallCount + narrowGradeBigCount + wideGradeSmallCount + wideGradeBigCount + targetGradeCount;
         double gradedAmount = totalFilletsWeight - mixGradeAmount;
         System.out.println("Total amount processed: " + (int)totalFilletsWeight);
@@ -92,17 +96,20 @@ public class Portioner {
     // ----------------------------------- WITH ADDED LAST-CUT-GROWTH ------------------------------------------------- //
     // ********************************* AND FULL DOUBLE OFFCUT OPTIMIZATION ****************************************** //
     // ********************** !!!! NEEDS REWORK TO CHECK FILLET SIZE ALWAYS  !!!!!! *********************************** //
-    public void process(double fillet){
+    public void process(double fillet)
+    {
         
         currentFillet = fillet;
         totalFilletsWeight += currentFillet; 
        
-        if (priorityCut > 0){
+        if (priorityCut > 0)
+        {
             grade(priorityCut);
             currentFillet = currentFillet - priorityCut;
         }
         
-        if (priorityCut2 > 0){
+        if (priorityCut2 > 0)
+        {
             grade(priorityCut2);
             currentFillet = currentFillet - priorityCut2;
             priorityCut2 = 0;
@@ -111,32 +118,41 @@ public class Portioner {
         targetPortions = (int)(currentFillet / target);
         offcut = currentFillet - (targetPortions * target);
         
-        if (offcut <= target * 0.16){
+        if (offcut <= target * 0.16)
+        {
             grade(target + offcut);
-            for (int i = 0; i < targetPortions - 1; i++){
+            for (int i = 0; i < targetPortions - 1; i++)
+            {
                 grade(target);
             }
             priorityCut = (target * 2) - (offcut + target);
-        } else if (offcut >= wideGradeSmallMin){
+        } else if (offcut >= wideGradeSmallMin)
+        {
             grade(offcut);
-            for (int i = 0; i < targetPortions; i++){
+            for (int i = 0; i < targetPortions; i++)
+            {
                 grade(target);
             }
             priorityCut = (target * 2) - offcut;   
-        } else {
-            if (offcut <= target * 0.32){
+        } else 
+        {
+            if (offcut <= target * 0.32)
+            {
                 grade(target * 1.16);
                 offcut -= target * 0.16;
                 grade(target + offcut);
-                for (int i = 0; i < targetPortions - 2; i++){
+                for (int i = 0; i < targetPortions - 2; i++)
+                {
                     grade(target);
                 }
                 priorityCut = (target * 2) - (target * 1.16);
                 priorityCut2 = (target * 2) - (target + offcut);
-            } else {
+            } else 
+            {
                 //grade(target * 1.16); turning off first to find grading bug..
                 grade(target * 1.16);
-                for (int i = 0; i < targetPortions - 2; i++){
+                for (int i = 0; i < targetPortions - 2; i++)
+                {
                     grade(target);
                 }
                 grade(offcut - target * 0.32);
@@ -149,26 +165,32 @@ public class Portioner {
     }
     
        
-    private void grade(double portion){
+    private void grade(double portion)
+    {
         totalVolumeFromGrader += portion;
-        if (portion >= wideGradeSmallMin && portion < wideGradeSmallMax){
+        if (portion >= wideGradeSmallMin && portion < wideGradeSmallMax)
+        {
             wideGradeSmallCount += 1;
-        } else if (portion >= narrowGradeSmallMin && portion < narrowGradeSmallMax){
+        } else if (portion >= narrowGradeSmallMin && portion < narrowGradeSmallMax)
+        {
             narrowGradeSmallCount += 1;
-        } else if (portion >= targetGradeMin && portion < targetGradeMax){
+        } else if (portion >= targetGradeMin && portion < targetGradeMax)
+        {
             targetGradeCount += 1;
-        } else if (portion >= narrowGradeBigMin && portion < narrowGradeBigMax){
+        } else if (portion >= narrowGradeBigMin && portion < narrowGradeBigMax)
+        {
             narrowGradeBigCount += 1;
-        } else if (portion >= wideGradeBigMin && portion <= wideGradeBigMax){
+        } else if (portion >= wideGradeBigMin && portion <= wideGradeBigMax)
+        {
             wideGradeBigCount += 1;
-        } else if (portion < wideGradeSmallMin){
+        } else if (portion < wideGradeSmallMin)
+        {
             mixGradeCount += 1;
             mixGradeAmount += portion;
-            if (portion > maxMixGradeSize){
+            if (portion > maxMixGradeSize)
+            {
                 maxMixGradeSize = portion;
             } 
         } 
-    }
-    
-    
+    }   
 }
