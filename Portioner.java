@@ -93,38 +93,40 @@ public class Portioner
     // ********************************* AND FULL DOUBLE OFFCUT OPTIMIZATION ****************************************** //
     // ********************** !!!! NEEDS REWORK TO CHECK FILLET SIZE ALWAYS  !!!!!! *********************************** //
     // ******************* !!!! GRADER is still called too many times during process  !!!!! *************************** //
+    // ******************* the difference between totalVolumeFromGrader and totalFillets weight************************ //
+    // ******************* is in multiplies of target size; means that grade(target) called to many times************** //
     public void process(double fillet)
     {
         
         currentFillet = fillet;
-        totalFilletsWeight += currentFillet;  // update the total amount of fillets processed
+        totalFilletsWeight += currentFillet;                // update the total amount of fillets processed
         
-        // if current fillet is big enough to give us priorityCut
-        // and if needed apply the priority cut first       
+                                                            // if current fillet is big enough to give us priorityCut
+                                                            // and if needed apply the priority cut first       
         
         if (priorityCut <= currentFillet && priorityCut > 0) 
         {
             grade(priorityCut);
-            currentFillet -= priorityCut; // take the priority cut off current fillet
+            currentFillet -= priorityCut;                   // take the priority cut off current fillet
         }
         priorityCut = 0;
         
-        // if current fillet is big enough to give us second priority cut
-        // then if needed apply the priority cut2
+                                                            // if current fillet is big enough to give us second priority cut
+                                                            // then if needed apply the priority cut2
         
         if (priorityCut2 <= currentFillet && priorityCut2 > 0) 
         {
             grade(priorityCut2);
-            currentFillet -= priorityCut2; // take the second priority cut off current fillet
+            currentFillet -= priorityCut2;                  // take the second priority cut off current fillet
         }
         priorityCut2 = 0;
         
-        targetPortions = (int)(currentFillet / target); // calculate how many taget cuts can you cut from current fillet
+        targetPortions = (int)(currentFillet / target);     // calculate how many taget cuts can you cut from current fillet
         offcut = currentFillet - (targetPortions * target); // calculate the size of the offcut after cutting off target portions
         
         if (currentFillet >= wideGradeSmallMin)
         {
-            if (offcut <= target * 0.16) // if the offcut is smaller or equal to biggest accepted growth size then grow the last cut and cut it off
+            if (offcut <= target * 0.16)                     // if the offcut is smaller or equal to biggest accepted growth size then grow the last cut and cut it off
             {
                 grade(target + offcut);
                 for (int i = 0; i < targetPortions - 1; i++) // and cut the rest for target sized portions
@@ -132,36 +134,36 @@ public class Portioner
                     grade(target);
                 }
                 priorityCut = (target * 2) - (offcut + target); // then update priority cut to match with the grown cut
-            } else if (offcut >= wideGradeSmallMin) // if the offcut is bigger or equal to smallest gradable portion then grade it on its own
+            } else if (offcut >= wideGradeSmallMin)             // if the offcut is bigger or equal to smallest gradable portion then grade it on its own
             {
                 grade(offcut);
-                for (int i = 0; i < targetPortions; i++) // then cut the rest for target portions
+                for (int i = 0; i < targetPortions; i++)        // then cut the rest for target portions
                 {
                     grade(target); 
                 }
-                priorityCut = (target * 2) - offcut;  // and update the priority cut to match the offcut portion
-            } else // otherwise (if offcut too big to grow the portion but too small to be graded on its own)
+                priorityCut = (target * 2) - offcut;        // and update the priority cut to match the offcut portion
+            } else                                          // otherwise (if offcut too big to grow the portion but too small to be graded on its own)
             {
-                if (offcut <= target * 0.32) // if offcut is big enough to grow two porions  (2 * 0.16 or less) then
+                if (offcut <= target * 0.32)                // if offcut is big enough to grow two porions  (2 * 0.16 or less) then
                 {
-                    grade(target * 1.16); // grow one to the max
-                    offcut -= target * 0.16; // find out how much offcut is left
-                    grade(target + offcut); // grow the second one with the rest of the offcut
+                    grade(target * 1.16);                   // grow one to the max
+                    offcut -= target * 0.16;                // find out how much offcut is left
+                    grade(target + offcut);                 // grow the second one with the rest of the offcut
                     for (int i = 0; i < targetPortions - 2; i++) // grade the rest for target sized cuts
                     {
                         grade(target);
                     }
                     priorityCut = (target * 2) - (target * 1.16);
                     priorityCut2 = (target * 2) - (target + offcut);
-                } else // if offcut is bigger than doubled max growth size so > 2 * 0.16
+                } else                                      // if offcut is bigger than doubled max growth size so > 2 * 0.16
                 {
-                    grade(target * 1.16); // it is needed twice for sure!!
-                    grade(target * 1.16); // grade two grown portions 
+                    grade(target * 1.16);                   // it is needed twice for sure!!
+                    grade(target * 1.16);                   // grade two grown portions 
                     for (int i = 0; i < targetPortions - 2; i++) // grade the rest for target sized cuts
                     {
                         grade(target);
                     }
-                    grade(offcut - (target * 0.32)); // grade the rest of offcut (for mix, wasted)
+                    grade(offcut - (target * 0.32));        // grade the rest of offcut (for mix, wasted)
                     priorityCut = (target * 2) - (target * 1.16);
                     priorityCut2 = (target * 2) - (target * 1.16);
                 }

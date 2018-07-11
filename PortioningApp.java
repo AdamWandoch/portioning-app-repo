@@ -22,10 +22,10 @@ public class PortioningApp
 "    // ----------------------------------- WITH ADDED LAST-CUT-GROWTH ------------------------------------------------- //\n" +
 "    // ********************************* AND FULL DOUBLE OFFCUT OPTIMIZATION ****************************************** //");
         double portionSize = 125;
-        int testSize = 10000;
+        int testSize = 200;
         double randomFillet;
-        double minFilletSize = 450;
-        double maxFilletSize = 900;
+        double minFilletSize = 225;
+        double maxFilletSize = 500;
         
         System.out.println("Test One: ");
         Portioner machine1 = new Portioner(portionSize);
