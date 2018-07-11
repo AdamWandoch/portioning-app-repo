@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package portioningapp;
 
 /**
@@ -25,14 +21,14 @@ public class PortioningApp
         int testSize = 200;
         double randomFillet;
         double minFilletSize = 225;
-        double maxFilletSize = 500;
+        double maxFilletSize = 450;
         
         System.out.println("Test One: ");
         Portioner machine1 = new Portioner(portionSize);
         
         for (int i = 0; i < testSize; i++)
         {
-            randomFillet = Math.random() * (maxFilletSize - minFilletSize) + minFilletSize;
+            randomFillet = 260;//Math.random() * (maxFilletSize - minFilletSize) + minFilletSize;
             machine1.process(randomFillet);
         }
         machine1.PrintStats();

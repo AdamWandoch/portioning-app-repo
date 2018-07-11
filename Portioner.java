@@ -155,6 +155,7 @@ public class Portioner
                     }
                     priorityCut = (target * 2) - (target * 1.16);
                     priorityCut2 = (target * 2) - (target + offcut);
+                    offcut = 0;
                 } else                                      // if offcut is bigger than doubled max growth size so > 2 * 0.16
                 {
                     grade(target * 1.16);                   // it is needed twice for sure!!
