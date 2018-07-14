@@ -2,7 +2,7 @@
 
 Hi Guys, 
 
-I used to work at a fish processing plant and during cod portioning process using one of Marel's iCut portioners I discovered the cutting
+I used to work at a fish processing plant and during cod portioning process using one of Marel's I-Cut portioners I discovered the cutting
 pattern could be based on the total fillet size to utilize the material better. 
 
 The finished product is a vacuum packed tray with two cod pieces that add up to 250g in this case. Ideally we would only want to use 
@@ -12,7 +12,7 @@ smaller and bigger pieces: in one pack 110g minimum and 140g max. Fillets come i
 This way when fillet was ie.: 612g it could be cut into 125g + 125g + 125g + 125g + 112g and from the next fillet we would need to first
 cut a "priority cut" of 128g (250g target minus 112g sized offcut). This was controlled by operator: when I saw that a lot of 110g to 115g 
 pieces were coming of I had to manually change the portioner setting to target for bigger cuts to compliment the small ones until the balance 
-was more or less right then switch back to 125g target. This could be definitely controlled automatically by the iCut software.
+was more or less right then switch back to 125g target. This could be definitely controlled automatically by the I-Cut software.
 
 Furthermore, what if the off cut size was smaller than the minimum tolerated 110g piece? It would go to waste tray and would be hand chopped
 later for seafood chowder (product of a far lesser value).
