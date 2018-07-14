@@ -5,6 +5,8 @@ Hi Guys,
 I used to work at a fish processing plant and during cod portioning process using one of Marel's I-Cut portioners I discovered the cutting
 pattern could be based on the total fillet size to utilize the material better. 
 
+https://marel.com/fish-processing/systems-and-equipment/portion-cutting/i-cut-11-portioncutter/545?prdct=1&parent=545&pc=portioning
+
 The finished product is a vacuum packed tray with two cod pieces that add up to 250g in this case. Ideally we would only want to use 
 125g pieces, this however would create an awful amount of waste. To comply with industry standards it has been approved to tolerate 
 smaller and bigger pieces: in one pack 110g minimum and 140g max. Fillets come in two grades: 225g to 450g or 450g to 900g.
