@@ -179,6 +179,13 @@ public class Portioner
        
     private void grade(double portion)
     {
+        /*//testing break mechanism start
+        if (portion > currentFillet) 
+        {
+            System.exit(1);
+        }
+        this.currentFillet -= portion;
+         //testing break mechanism end (makes no sense actually, portion likely to be > currentFillet)*/
         totalVolumeFromGrader += portion;
         if (portion >= wideGradeSmallMin && portion < wideGradeSmallMax)
         {
