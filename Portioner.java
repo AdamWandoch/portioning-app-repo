@@ -4,6 +4,7 @@ package portioningapp;
 /**
  * @author AdamWandoch
  */
+
 public class Portioner {
 
     private double currentFillet;
@@ -83,7 +84,7 @@ public class Portioner {
         System.out.println(" ");
     }
 
-    // ------------ PORTIONER ALGORYTHM SIMULATING REGULAR PORTIONING WITH SELF-BALANCE ------------------------------- //
+    // ------------ PORTIONER ALGORITHM SIMULATING REGULAR PORTIONING WITH SELF-BALANCE ------------------------------- //
     // ----------------------------------- WITH ADDED LAST-CUT-GROWTH ------------------------------------------------- //
     // ********************************* AND FULL DOUBLE OFFCUT OPTIMIZATION ****************************************** //
     // ********************** !!!! NEEDS REWORK TO CHECK FILLET SIZE ALWAYS  !!!!!! *********************************** //
@@ -159,13 +160,13 @@ public class Portioner {
 
 
     private void grade(double portion) {
-        /*//testing break mechanism start
+        /* testing break mechanism start
         if (portion > currentFillet) 
         {
             System.exit(1);
         }
         this.currentFillet -= portion;
-         //testing break mechanism end (makes no sense actually, portion likely to be > currentFillet)*/
+         //testing break mechanism end (makes no sense actually, portion likely to be > currentFillet) */
         totalVolumeFromGrader += portion;
         if (portion >= wideGradeSmallMin && portion < wideGradeSmallMax) {
             wideGradeSmallCount += 1;

@@ -4,11 +4,8 @@ package portioningapp;
 /**
  * @author AdamWandoch
  */
-public class PortioningApp {
 
-    /**
-     * @param args the command line arguments
-     */
+public class PortioningApp {
 
     private static int testCount = 0;
     private static double portionSize = 125;
