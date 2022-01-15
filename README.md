@@ -34,7 +34,7 @@ of say 10 or more fillets ahead (so we could work out better cutting pattern for
 you want to have portions in balance all the time if possible so if you stop at any point you don't have too many small cuts or big cuts.
 
 In a test of 10000 450g-900g fillets for 125g target portion size the way iCut software was cutting the cod we were able to get an average
-yield of 93.5% (pairable portions) and the rest would be for chowder. So far with the last algorythm version I was able to improve it to
+yield of 93.5% (pairable portions) and the rest would be for chowder. So far with the last algorithm version I was able to improve it to
 an average of 97.6%.
 
 This means over 4% more of finished product compared to material for chowder. The difference in value was approx 4euro per kilo. This 
