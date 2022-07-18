@@ -1,11 +1,11 @@
-# portioning-app-repo
+# Fillet portioning algorithm
+### For greatly improved yield
 
-Hi Guys, 
 
-I used to work at a fish processing plant and during cod portioning process using one of Marel's I-Cut portioners I discovered the cutting
+During work at a fish processing plant on cod portioning process using one of Marel's I-Cut portioners I discovered the cutting
 pattern could be based on the total fillet size to utilize the material better. 
 
-https://marel.com/en/products/i-cut-11-portioncutter/fish
+https://marel.com/en/products/i-cut-11/fish/salmon
 
 The finished product is a vacuum packed tray with two cod pieces that add up to 250g in this case. Ideally we would only want to use 
 125g pieces, this however would create an awful amount of waste. To comply with industry standards it has been approved to tolerate 
@@ -41,13 +41,11 @@ This means over 4% more of finished product compared to material for chowder. Th
 plant was processing annually around 350tons of fish (cod alone). 4% * 350000kg * 4euros per kg = 56000euros of a difference every year.
 That's if the business wouldn't grow. 
 
-There is hundreds of plants like this that would benefit from the upgrade. This is simply because these portioners don't take advantage
+There are hundreds of plants like this that would benefit from the upgrade. This is simply because these portioners don't take advantage
 of a fact that a finished product consists of two pieces different in size. They are designed to cut programmed pattern regardless of 
 fillet size. 
 
 The solution would find use in any other food industry where in the pack of two there is a tolerance for two pieces to be slightly 
 different size.
-
-Cheers big ears!
 
 AdamWandoch
