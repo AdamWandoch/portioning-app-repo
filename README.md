@@ -5,7 +5,7 @@
 During work at a fish processing plant on cod portioning process using one of Marel's I-Cut portioners I discovered the cutting
 pattern could be based on the total fillet size to utilize the material better. 
 
-https://marel.com/en/products/i-cut-11/fish/salmon
+[PROCESSING MACHINE SITE](https://marel.com/en/products/i-cut-11/fish/salmon)
 
 The finished product is a vacuum packed tray with two cod pieces that add up to 250g in this case. Ideally we would only want to use 
 125g pieces, this however would create an awful amount of waste. To comply with industry standards it has been approved to tolerate 
